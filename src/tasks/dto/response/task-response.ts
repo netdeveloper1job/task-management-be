@@ -10,7 +10,7 @@ export class TaskResponse {
   id: number;
   
   @Expose()
-  userId: string;
+  userId: number;
   
   @Expose()
   title: string;

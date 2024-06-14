@@ -1,5 +1,5 @@
-import { LoggedInType } from 'src/common/Enums/registration.enum';
-import { Task } from 'src/tasks/entities/task.entity';
+import { LoggedInType } from '../../common/Enums/registration.enum';
+import { Task } from '../../tasks/entities/task.entity';
 import {
   Column,
   CreateDateColumn,

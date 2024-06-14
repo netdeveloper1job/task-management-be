@@ -9,7 +9,7 @@ import { CreateTaskDto } from './dto/request/create-task.dto';
 import { Task } from './entities/task.entity';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Like, Repository } from 'typeorm';
-import { Messages } from 'src/common/constants';
+import { Messages } from '../common/constants';
 
 @Injectable()
 export class TasksService {

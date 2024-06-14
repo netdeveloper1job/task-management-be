@@ -2,13 +2,9 @@ import { Controller, Get, Post, Body, Patch, Param, Delete, UseGuards, Query, Us
 import { TasksService } from './tasks.service';
 import { UpdateTaskDto } from './dto/request/update-task.dto';
 import { CreateTaskDto } from './dto/request/create-task.dto';
-import { ApiBearerAuth, ApiBody, ApiConsumes, ApiResponse, ApiTags } from '@nestjs/swagger';
+import { ApiBearerAuth, ApiResponse, ApiTags } from '@nestjs/swagger';
 import { TaskParentRoute, TaskRoutes } from './task.http.routes';
-import { JwtAuthGuard } from 'src/auth/guards/jwt-auth.guard';
-import { Public } from 'src/auth/constants';
-import { FileInterceptor } from '@nestjs/platform-express';
-import { Observable, of } from 'rxjs';
-import { multerOptions } from 'src/common/helper/uploadImage/uploadImage';
+import { JwtAuthGuard } from '../auth/guards/jwt-auth.guard';
 import { TaskWithResponse } from './dto/response/taskWithResponse';
 
 @ApiTags('tasks')
