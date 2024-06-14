@@ -6,5 +6,7 @@ export const TaskRoutes = {
     delete: ':id',
     view_one: '/taskById/:id',
     view_all: '/:search',
-    getTasksByUserId: '/getTasksByUserId/:id/:search',
+    getTasksByUserId: '/getTasksByUserId/:id',
+    filterTask: 'filterByStatus/:filter/:id',
+    filterAndSearchTasks: 'filterAndSearchTasks/:filter/:id/:searchQuery'
 }

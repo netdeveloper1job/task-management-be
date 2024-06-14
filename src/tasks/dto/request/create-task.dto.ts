@@ -16,6 +16,10 @@ export class CreateTaskDto {
     @ApiProperty()
     description: string;
 
+    @IsNotEmpty({ message: 'Description should not be empty' })
+    @ApiProperty()
+    dueDate: string;
+
     @ApiProperty({ default: TaskStatus.TODO })
     @IsEnum(TaskStatus)
     status: TaskStatus;

@@ -107,11 +107,10 @@ export class TasksService {
     }
   }
 
-  async getTasksByUserId(id: number, search: string) {
+  async getTasksByUserId(id: number) {
     const result = await this.taskRepository.find({
       where: {
         userId: id,
-        status: Like(`%${search.toLowerCase()}%` as any),
       },
       relations: ['user'],
     });
@@ -128,4 +127,44 @@ export class TasksService {
     }
   }
 
+  async filterTask(filter: string, id: number) {
+    if (filter.toLowerCase() === 'all') {
+      return this.getTasksByUserId(id);
+    } else {
+      const result = await this.taskRepository.find({
+        where: {
+          userId: id,
+          status: Like(`%${filter.toLowerCase()}%` as any),
+        },
+        relations: ['user'],
+      });
+      return {
+        message: `${Messages.Resource.Found} : Task`,
+        data: result,
+      };
+    }
+  }
+
+  async searchInTasks(tasks, searchQuery: string) {
+    const searchResults = tasks.filter(
+      (task) =>
+        task.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
+        task.description.toLowerCase().includes(searchQuery.toLowerCase()),
+    );
+
+    return {
+      message: `${Messages.Resource.Found} : Tasks`,
+      data: searchResults,
+    };
+  }
+
+  async filterAndSearchTasks(filter: string, id: number, searchQuery: string) {
+    const filteredTasks = await this.filterTask(filter, id);
+    if(searchQuery === 'null'){
+      return filteredTasks
+    }
+    else{
+      return this.searchInTasks(filteredTasks.data, searchQuery);
+    }
+  }
 }

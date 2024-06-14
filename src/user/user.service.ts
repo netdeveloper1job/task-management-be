@@ -95,6 +95,7 @@ export class UserService {
     await this.userRepository.update(id, request);
     return {
       message: `${Messages.Resource.Updated} : User`,
+      data: data,
     };
   }
 

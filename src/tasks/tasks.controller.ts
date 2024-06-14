@@ -43,7 +43,17 @@ export class TasksController {
   }
 
   @Get(TaskRoutes.getTasksByUserId)
-  getTasksByUserId(@Param('id') id: number, @Param('search') search: string) {
-    return this.tasksService.getTasksByUserId(+id,search);
+  getTasksByUserId(@Param('id') id: number) {
+    return this.tasksService.getTasksByUserId(+id);
+  }
+
+  @Get(TaskRoutes.filterTask)
+  filterTask(@Param('filter') filter: string,@Param('id') id: number) {
+    return this.tasksService.filterTask(filter,+id);
+  }
+
+  @Get(TaskRoutes.filterAndSearchTasks)
+  filterAndSearchTasks(@Param('filter') filter: string,@Param('id') id: number,@Param('searchQuery') searchQuery: string) {
+    return this.tasksService.filterAndSearchTasks(filter,+id,searchQuery);
   }
 }

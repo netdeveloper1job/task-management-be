@@ -18,6 +18,9 @@ export class TaskResponse {
   @Expose()
   description: string;
   
+  @Expose()
+  dueDate: string;
+  
   @ApiProperty({ example: TaskStatus })
   @Expose()
   status: string;

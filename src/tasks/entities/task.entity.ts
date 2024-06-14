@@ -23,6 +23,9 @@ export class Task {
   @Column()
   description: string;
 
+  @Column()
+  dueDate: string;
+
   @Column({ default: TaskStatus.TODO })
   status: TaskStatus;
 
