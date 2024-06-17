@@ -14,9 +14,9 @@ import { UpdateUserDto } from './dto/request/update-user.dto';
 import { CreateUserDto } from './dto/request/create-user.dto';
 import { ApiBody, ApiConsumes, ApiResponse, ApiTags } from '@nestjs/swagger';
 import { UserParentRoute, UserRoutes } from './user.http.routes';
-import { Public } from 'src/auth/constants';
+import { Public } from '../auth/constants';
 import { FileInterceptor } from '@nestjs/platform-express';
-import { multerOptions } from 'src/common/helper/uploadImage/uploadImage';
+import { multerOptions } from '../common/helper/uploadImage/uploadImage';
 import { Observable, of } from 'rxjs';
 import { UserWithResponse } from './dto/response/userWithResponse';
 

@@ -1,6 +1,6 @@
 import { IsEmail, IsEnum, IsNotEmpty } from '@nestjs/class-validator';
 import { ApiProperty } from '@nestjs/swagger';
-import { LoggedInType } from 'src/common/Enums/registration.enum';
+import { LoggedInType } from '../../../common/Enums/registration.enum';
 
 export class CreateUserDto {
 

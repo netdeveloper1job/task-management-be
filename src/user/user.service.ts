@@ -10,7 +10,7 @@ import { CreateUserDto } from './dto/request/create-user.dto';
 import { InjectRepository } from '@nestjs/typeorm';
 import { User } from './entities/user.entity';
 import { Repository } from 'typeorm';
-import { Messages } from 'src/common/constants';
+import { Messages } from '../common/constants';
 import { UserWithResponse } from './dto/response/userWithResponse';
 
 @Injectable()

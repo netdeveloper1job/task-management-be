@@ -97,6 +97,12 @@ export class TasksService {
   async remove(id: number) {
     try {
       const deleteData = await this.taskRepository.delete(id);
+      if (deleteData.affected === 0) {
+        throw new HttpException(
+          `${Messages.Resource.NotFound} : Task`,
+          HttpStatus.NOT_FOUND,
+        );
+      }
       if (deleteData.affected > 0) {
         return {
           message: `${Messages.Resource.Deleted} : Task`,
