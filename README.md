@@ -26,11 +26,16 @@
 
 [Nest](https://github.com/nestjs/nest) framework TypeScript starter repository.
 
-## Installation
+## Install Necessary Frameworks
+1. Node.js: 18.18.2 (if not already installed).
+2. XAMPP and MySQL
 
-```bash
-$ npm install
-```
+## Setup Instructions
+
+1. Clone the project with git clone <repository url> in the command prompt.
+2. Navigate to the cloned project directory and then run  npm i to install necessary dependencies.
+3. Create the database (e.g., taskmanagement).
+4. Import the provided database schema or data into the newly created database. 
 
 ## Running the app
 ```bash
@@ -43,23 +48,6 @@ $ npm run start:dev
 # unit tests
 $ npm run test
 
-# e2e tests
-$ npm run test:e2e
-
 # test coverage
 $ npm run test:cov
 ```
-
-## Support
-
-Nest is an MIT-licensed open source project. It can grow thanks to the sponsors and support by the amazing backers. If you'd like to join them, please [read more here](https://docs.nestjs.com/support).
-
-## Stay in touch
-
-- Author - [Kamil Myśliwiec](https://kamilmysliwiec.com)
-- Website - [https://nestjs.com](https://nestjs.com/)
-- Twitter - [@nestframework](https://twitter.com/nestframework)
-
-## License
-
-Nest is [MIT licensed](LICENSE).
