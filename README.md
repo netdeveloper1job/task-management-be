@@ -28,7 +28,7 @@
 
 ## Install Necessary Frameworks
 1. Node.js: 18.18.2 (if not already installed).
-2. XAMPP and MySQL
+2. MySQL
 
 ## Setup Instructions
 
