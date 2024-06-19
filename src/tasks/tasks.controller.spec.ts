@@ -173,7 +173,7 @@ describe('TasksController', () => {
     });
 
     it('should throw an error if taskId is not a number', async () => {
-      const taskId = '1';
+      const taskId = 'asd';
       try {
         await controller.findOne(taskId);
       } catch (error) {
