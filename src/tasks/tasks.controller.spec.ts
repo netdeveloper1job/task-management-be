@@ -213,7 +213,7 @@ describe('TasksController', () => {
     });
 
     it('should throw an error if taskId is not a number', async () => {
-      const taskId = '1';
+      const taskId = 'asdas';
       try {
         await controller.update(taskId, {} as UpdateTaskDto);
       } catch (error) {
